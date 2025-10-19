@@ -1,0 +1,419 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/simulation/modelsim
+vadder
+Z1 !s110 1760380309
+!i10b 1
+!s100 jXE67fZjiCj2W4l?`i:H?0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I5oRXKOjFEQ1Bkgn@edh@B3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1722889559
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/adder.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/adder.v
+!i122 14
+L0 4 8
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1760380309.000000
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/adder.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components
+Z8 tCvgOpt 0
+valu
+R1
+!i10b 1
+!s100 UKQdNQXidS3;P>m>e2>YJ3
+R2
+I][@nEch4FFiYlg`S[nIVK1
+R3
+R0
+w1760379478
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu.v
+!i122 13
+L0 6 38
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu.v|
+!i113 1
+R6
+R7
+R8
+valu_decoder
+R1
+!i10b 1
+!s100 d959PjaQ_eR1kD3WKCo]j0
+R2
+IJ<9Y]aCAKJM4zEkIRWGn72
+R3
+R0
+w1760379469
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu_decoder.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu_decoder.v
+!i122 12
+L0 5 51
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu_decoder.v|
+!i113 1
+R6
+R7
+R8
+vbranch_logic
+Z9 !s110 1760380308
+!i10b 1
+!s100 <C;`O?e9nIQHFEi8n2zcj3
+R2
+Iemn<lbTDDQbAJ@gFPWzOU2
+R3
+R0
+w1760379613
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/branch_logic.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/branch_logic.v
+!i122 0
+L0 3 25
+R4
+r1
+!s85 0
+31
+Z10 !s108 1760380308.000000
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/branch_logic.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/branch_logic.v|
+!i113 1
+R6
+R7
+R8
+vcontroller
+R1
+!i10b 1
+!s100 b]1[ijV8]F6QGiHDY^YJh2
+R2
+II_:4:h96eB4XAMlId6=Z00
+R3
+R0
+w1760379554
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v
+!i122 11
+L0 5 28
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v|
+!i113 1
+R6
+R7
+R8
+vdata_mem
+R1
+!i10b 1
+!s100 cSgAMTM]e`<Hged1CI=SB3
+R2
+IE4F46C<@`a:Xe]olhHd>c2
+R3
+R0
+w1722889553
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/data_mem.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/data_mem.v
+!i122 3
+L0 4 19
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/data_mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/data_mem.v|
+!i113 1
+R6
+Z11 !s92 -vlog01compat -work work +incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code
+R8
+vdatapath
+R1
+!i10b 1
+!s100 K@lkfRz_NIReYU8El:3zZ1
+R2
+IGkoo3gEHKU:R]0OH]o<H41
+R3
+R0
+w1760379654
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v
+!i122 10
+L0 4 67
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v|
+!i113 1
+R6
+R7
+R8
+vimm_extend
+R1
+!i10b 1
+!s100 YliUGaGA4EQYAO:=S>[I00
+R2
+I87PFIUDED7?2U3[544khN0
+R3
+R0
+w1760379670
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/imm_extend.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/imm_extend.v
+!i122 9
+L0 4 30
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/imm_extend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/imm_extend.v|
+!i113 1
+R6
+R7
+R8
+vinstr_mem
+R1
+!i10b 1
+!s100 _2]cbk6YNQ9ECcKm2oV;A0
+R2
+IEIzh;n]Vje7IJi3eN]7hg3
+R3
+R0
+w1760380282
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v
+!i122 15
+L0 4 18
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v|
+!i113 1
+R6
+R11
+R8
+vmain_decoder
+R1
+!i10b 1
+!s100 F_U@Mn4b@YagWgHT:hk^e3
+R2
+INkVhZo7@4Rn1j[@:dnNT71
+R3
+R0
+w1760377476
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/main_decoder.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/main_decoder.v
+!i122 8
+L0 3 30
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/main_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/main_decoder.v|
+!i113 1
+R6
+R7
+R8
+vmux2
+R1
+!i10b 1
+!s100 O<Ld`3jD6QL?6PIEe_QAk1
+R2
+I:LQRL58G<FlPAo99V;Ki<1
+R3
+R0
+w1722889625
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux2.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux2.v
+!i122 7
+Z12 L0 4 9
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux2.v|
+!i113 1
+R6
+R7
+R8
+vmux4
+R1
+!i10b 1
+!s100 V4YdM>hK^I8CMb?cH8Cej3
+R2
+IP8GmoUFzZ@In:V@4P52E@3
+R3
+R0
+w1722889634
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux4.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux4.v
+!i122 6
+R12
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux4.v|
+!i113 1
+R6
+R7
+R8
+vreg_file
+R1
+!i10b 1
+!s100 z2]InGk0[gjzdlc7_WWYI1
+R2
+If9V>a_632<hAO1>Bd56Dg1
+R3
+R0
+w1722889641
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reg_file.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reg_file.v
+!i122 5
+L0 8 27
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reg_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reg_file.v|
+!i113 1
+R6
+R7
+R8
+vreset_ff
+R1
+!i10b 1
+!s100 c1I5T0L8]]ZK0dn2hg0_F0
+R2
+I@Dd4jo0;4<cIZgogo>T0m1
+R3
+R0
+w1722889645
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reset_ff.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reset_ff.v
+!i122 4
+L0 4 12
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reset_ff.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reset_ff.v|
+!i113 1
+R6
+R7
+R8
+vriscv_cpu
+R1
+!i10b 1
+!s100 <aGoD[<mVnQNBe?l_Kk[h0
+R2
+Iaen2^8EAV>h6kWN=g0bzH2
+R3
+R0
+w1760379773
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v
+!i122 2
+L0 5 23
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v|
+!i113 1
+R6
+R11
+R8
+vt1c_riscv_cpu
+R9
+!i10b 1
+!s100 a;RYc`g=QND48]]INnffG0
+R2
+Il`R5iV3Dgof6XCg57?8aP2
+R3
+R0
+w1760372401
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v
+!i122 1
+L0 32 44
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v|
+!i113 1
+R6
+R11
+R8
+vtb
+R1
+!i10b 1
+!s100 3lMj:0B^XkCNJJiBLB9Bo0
+R2
+IKY]7NfORBYmNf]1Id8FJL0
+R3
+R0
+w1760380109
+8/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/.test/tb.v
+F/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/.test/tb.v
+!i122 16
+L0 3 532
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/.test/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/.test|/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/.test/tb.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/.test
+R8
