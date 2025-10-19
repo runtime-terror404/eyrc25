@@ -1,13 +1,31 @@
+/*
+# Team ID:          2401
+# Theme:            MazeSolver Bot (MB)
+# Author List:      Dibyendu Maity,Ankit Dwibedi,Sankalpa Basak,Snehajit Paul
+# Filename:         imm_extend.v
+# File Description: This module generates the 32-bit sign-extended immediate value from the instruction. It uses the 'immsrc' control signal to select the correct immediate format (I, S, B, J, or U type).
+# Global variables: None
+*/
 
 
-// imm_extend.v - logic for sign extension
 module imm_extend (
     input  [31:0]     instr,
     input  [ 1:0]     immsrc,
     output reg [31:0] immext
 );
 
+// instr: Input, the 32-bit instruction word
+// immsrc: Input, 2-bit control signal selecting the immediate format
+// immext: Output, the 32-bit sign-extended immediate value
+
 always @(*) begin
+    /*
+    Purpose:
+    ---
+    Combinational logic to select and construct the correct sign-extended 
+    immediate value (immext) based on the instruction format, 
+    which is specified by the immsrc signal.
+    */
     case(immsrc)
         // I-type
         2'b00: immext = {{20{instr[31]}}, instr[31:20]};

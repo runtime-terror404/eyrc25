@@ -1,30 +1,58 @@
+/*
+# Team ID:          2401
+# Theme:            MazeSolver Bot (MB)
+# Author List:      Dibyendu Maity,Ankit Dwibedi,Sankalpa Basak,Snehajit Paul
+# Filename:         datapath.v
+# File Description: This module implements the main datapath for the single-cycle RISC-V processor. It connects the PC, register file, immediate extender, ALU, and memory signals.
+# Global variables: None
+*/
 
-
-// datapath.v - with JALR fix
 module datapath (
+    // Control Inputs
     input         clk, reset,
     input [1:0]   ResultSrc,
     input         PCSrc, ALUSrc,
     input         RegWrite,
     input [1:0]   ImmSrc,
     input [3:0]   ALUControl,
+
+    // ALU Flag Outputs
     output        Zero,
+
+    // PC and Instruction Memory Interface
     output [31:0] PC,
     input  [31:0] Instr,
+
+    // Data Memory Interface
     output [31:0] Mem_WrAddr, Mem_WrData,
     input  [31:0] ReadData,
+
+    // Writeback
     output [31:0] Result,
+
+    // ALU Flag Outputs
     output        ALUResult0
 );
 
+// Internal Wires
 wire [31:0] PCNext, PCPlus4, PCTarget;
 wire [31:0] ImmExt, SrcA, SrcB, WriteData, ALUResult;
 wire [31:0] UpperImm;
 reg  [31:0] ReadDataExt;
 
+// ReadDataExt: Holds the sign-extended or zero-extended data from memory for loads
+// JALR: Internal wire, high when the instruction is JALR
+
 // Inline load extension logic
 always @(*) begin
-    case (Instr[14:12])
+    /*
+    Purpose:
+    ---
+    Combinational logic to sign-extend or zero-extend the data read
+    from memory (ReadData) based on the load instruction type (funct3).
+    This handles LB, LH, LW, LBU, and LHU.
+    */
+    case (Instr[14:12]) // funct3 field for load instructions
         3'b000: ReadDataExt = {{24{ReadData[7]}}, ReadData[7:0]};      // LB
         3'b001: ReadDataExt = {{16{ReadData[15]}}, ReadData[15:0]};    // LH
         3'b010: ReadDataExt = ReadData;                                 // LW
@@ -35,10 +63,13 @@ always @(*) begin
 end
 
 // JALR detection
+// JALR: Opcode 7'b1100111
 wire JALR;
 assign JALR = (Instr[6:0] == 7'b1100111);
 
 // PC target selection
+// For JALR, the target is the ALU result (rs1 + imm)
+// For other branches/JAL, the target is PC + ImmExt
 assign PCTarget = JALR ? ALUResult : (PC + ImmExt);
 
 // next PC logic

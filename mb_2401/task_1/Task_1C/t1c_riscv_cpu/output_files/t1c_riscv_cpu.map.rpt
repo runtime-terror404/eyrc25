@@ -1,5 +1,5 @@
 Analysis & Synthesis report for t1c_riscv_cpu
-Tue Oct 14 00:01:40 2025
+Mon Oct 20 00:20:33 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -57,7 +57,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 14 00:01:40 2025       ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 20 00:20:33 2025       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; t1c_riscv_cpu                               ;
 ; Top-level Entity Name              ; t1c_riscv_cpu                               ;
@@ -462,67 +462,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Oct 14 00:01:25 2025
+    Info: Processing started: Mon Oct 20 00:20:17 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off t1c_riscv_cpu -c t1c_riscv_cpu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/branch_logic.v
-    Info (12023): Found entity 1: branch_logic File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/branch_logic.v Line: 3
+    Info (12023): Found entity 1: branch_logic File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/branch_logic.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/t1c_riscv_cpu.v
-    Info (12023): Found entity 1: t1c_riscv_cpu File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 32
+    Info (12023): Found entity 1: t1c_riscv_cpu File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/riscv_cpu.v
-    Info (12023): Found entity 1: riscv_cpu File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v Line: 5
+    Info (12023): Found entity 1: riscv_cpu File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/instr_mem.v
-    Info (12023): Found entity 1: instr_mem File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 4
+    Info (12023): Found entity 1: instr_mem File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/data_mem.v
-    Info (12023): Found entity 1: data_mem File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/data_mem.v Line: 4
+    Info (12023): Found entity 1: data_mem File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/data_mem.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/reset_ff.v
-    Info (12023): Found entity 1: reset_ff File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reset_ff.v Line: 4
+    Info (12023): Found entity 1: reset_ff File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reset_ff.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/reg_file.v
-    Info (12023): Found entity 1: reg_file File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reg_file.v Line: 8
+    Info (12023): Found entity 1: reg_file File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reg_file.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/mux4.v
-    Info (12023): Found entity 1: mux4 File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux4.v Line: 4
+    Info (12023): Found entity 1: mux4 File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux4.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/mux3.v
-    Info (12023): Found entity 1: mux3 File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux3.v Line: 4
+    Info (12023): Found entity 1: mux3 File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux3.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/mux2.v
-    Info (12023): Found entity 1: mux2 File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux2.v Line: 4
+    Info (12023): Found entity 1: mux2 File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/mux2.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/main_decoder.v
-    Info (12023): Found entity 1: main_decoder File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/main_decoder.v Line: 3
+    Info (12023): Found entity 1: main_decoder File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/main_decoder.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/imm_extend.v
-    Info (12023): Found entity 1: imm_extend File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/imm_extend.v Line: 4
+    Info (12023): Found entity 1: imm_extend File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/imm_extend.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/datapath.v
-    Info (12023): Found entity 1: datapath File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 4
+    Info (12023): Found entity 1: datapath File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/controller.v
-    Info (12023): Found entity 1: controller File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v Line: 5
+    Info (12023): Found entity 1: controller File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/alu_decoder.v
-    Info (12023): Found entity 1: alu_decoder File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu_decoder.v Line: 5
+    Info (12023): Found entity 1: alu_decoder File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu_decoder.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/alu.v
-    Info (12023): Found entity 1: alu File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu.v Line: 6
+    Info (12023): Found entity 1: alu File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/alu.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file code/components/adder.v
-    Info (12023): Found entity 1: adder File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/adder.v Line: 4
+    Info (12023): Found entity 1: adder File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/adder.v Line: 11
 Info (12127): Elaborating entity "t1c_riscv_cpu" for the top level hierarchy
-Info (12128): Elaborating entity "riscv_cpu" for hierarchy "riscv_cpu:rvcpu" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 56
-Info (12128): Elaborating entity "controller" for hierarchy "riscv_cpu:rvcpu|controller:c" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v Line: 21
-Info (12128): Elaborating entity "main_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|main_decoder:md" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v Line: 23
-Info (12128): Elaborating entity "alu_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|alu_decoder:ad" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v Line: 25
-Info (12128): Elaborating entity "branch_logic" for hierarchy "riscv_cpu:rvcpu|controller:c|branch_logic:bl" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v Line: 27
-Info (12128): Elaborating entity "datapath" for hierarchy "riscv_cpu:rvcpu|datapath:dp" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v Line: 25
-Info (12128): Elaborating entity "reset_ff" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 45
-Info (12128): Elaborating entity "adder" for hierarchy "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 46
-Info (12128): Elaborating entity "mux2" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 47
-Info (12128): Elaborating entity "reg_file" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reg_file:rf" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 50
-Info (12128): Elaborating entity "imm_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 51
-Info (12128): Elaborating entity "alu" for hierarchy "riscv_cpu:rvcpu|datapath:dp|alu:alu" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 55
-Info (12128): Elaborating entity "mux4" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 61
-Info (12128): Elaborating entity "instr_mem" for hierarchy "instr_mem:instrmem" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 61
-Warning (10850): Verilog HDL warning at instr_mem.v(14): number of words (79) in memory file does not match the number of elements in the address range [0:511] File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 14
-Warning (10030): Net "instr_ram.data_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 10
-Warning (10030): Net "instr_ram.waddr_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 10
-Warning (10030): Net "instr_ram.we_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 10
-Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:datamem" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 69
+Info (12128): Elaborating entity "riscv_cpu" for hierarchy "riscv_cpu:rvcpu" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 52
+Info (12128): Elaborating entity "controller" for hierarchy "riscv_cpu:rvcpu|controller:c" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v Line: 50
+Info (12128): Elaborating entity "main_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|main_decoder:md" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v Line: 46
+Info (12128): Elaborating entity "alu_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|alu_decoder:ad" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v Line: 48
+Info (12128): Elaborating entity "branch_logic" for hierarchy "riscv_cpu:rvcpu|controller:c|branch_logic:bl" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/controller.v Line: 50
+Info (12128): Elaborating entity "datapath" for hierarchy "riscv_cpu:rvcpu|datapath:dp" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/riscv_cpu.v Line: 55
+Info (12128): Elaborating entity "reset_ff" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 76
+Info (12128): Elaborating entity "adder" for hierarchy "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 77
+Info (12128): Elaborating entity "mux2" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux2:pcmux" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 78
+Info (12128): Elaborating entity "reg_file" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reg_file:rf" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 81
+Info (12128): Elaborating entity "imm_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 82
+Info (12128): Elaborating entity "alu" for hierarchy "riscv_cpu:rvcpu|datapath:dp|alu:alu" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 86
+Info (12128): Elaborating entity "mux4" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/datapath.v Line: 92
+Info (12128): Elaborating entity "instr_mem" for hierarchy "instr_mem:instrmem" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 57
+Warning (10850): Verilog HDL warning at instr_mem.v(33): number of words (79) in memory file does not match the number of elements in the address range [0:511] File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 33
+Warning (10030): Net "instr_ram.data_a" at instr_mem.v(22) has no driver or initial value, using a default initial value '0' File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 22
+Warning (10030): Net "instr_ram.waddr_a" at instr_mem.v(22) has no driver or initial value, using a default initial value '0' File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 22
+Warning (10030): Net "instr_ram.we_a" at instr_mem.v(22) has no driver or initial value, using a default initial value '0' File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/instr_mem.v Line: 22
+Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:datamem" File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 65
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276007): RAM logic "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|reg_file_arr" is uninferred due to asynchronous read logic File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reg_file.v Line: 16
-    Info (276007): RAM logic "data_mem:datamem|data_ram" is uninferred due to asynchronous read logic File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/data_mem.v Line: 11
+    Info (276007): RAM logic "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|reg_file_arr" is uninferred due to asynchronous read logic File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/components/reg_file.v Line: 31
+    Info (276007): RAM logic "data_mem:datamem|data_ram" is uninferred due to asynchronous read logic File: /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/code/data_mem.v Line: 26
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/db/t1c_riscv_cpu.ram0_instr_mem_8ff0214b.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file /home/divine/eyrc25/mb_2401/task_1/Task_1C/t1c_riscv_cpu/output_files/t1c_riscv_cpu.map.smsg
@@ -533,9 +533,9 @@ Info (21057): Implemented 7496 device resources after synthesis - the final reso
     Info (21059): Implemented 161 output pins
     Info (21061): Implemented 7268 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 518 megabytes
-    Info: Processing ended: Tue Oct 14 00:01:40 2025
-    Info: Elapsed time: 00:00:15
+    Info: Peak virtual memory: 517 megabytes
+    Info: Processing ended: Mon Oct 20 00:20:33 2025
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:26
 
 

@@ -1,6 +1,11 @@
-
-
-// alu_decoder.v - logic for ALU decoder
+/*
+# Team ID:          2401
+# Theme:            MazeSolver Bot (MB)
+# Author List:      Dibyendu Maity,Ankit Dwibedi,Sankalpa Basak,Snehajit Paul
+# Filename:         alu_decoder.v
+# File Description: Decodes instruction fields (ALUOp, funct3, etc.) to generate the 4-bit ALUControl signal for the ALU. This is specific to a RISC-V style instruction set.
+# Global variables: None
+*/
 
 module alu_decoder (
     input            opb5,
@@ -10,7 +15,19 @@ module alu_decoder (
     output reg [3:0] ALUControl
 );
 
+// opb5: Input, typically opcode[5], helps differentiate instruction types (e.g., R-type vs I-type)
+// funct3: Input, 3-bit function field from the instruction
+// funct7b5: Input, bit 5 of the 7-bit function field (funct7), helps differentiate ADD/SUB and SRL/SRA
+// ALUOp: Input, 2-bit primary control signal from the Main Decoder
+// ALUControl: Output, 4-bit control signal for the ALU (e.g., 0000=ADD, 0001=SUB)
+
 always @(*) begin
+    /*
+    Purpose:
+    ---
+    < Combinational logic to determine the ALUControl output signal based on 
+      the instruction fields (ALUOp, funct3, funct7b5, opb5). >
+    */
     case (ALUOp)
         2'b00: ALUControl = 4'b0000;             // addition (for load/store)
         

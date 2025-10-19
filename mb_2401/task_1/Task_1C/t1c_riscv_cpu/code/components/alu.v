@@ -1,14 +1,24 @@
+/*
+# Team ID:          2401
+# Theme:            MazeSolver Bot (MB)
+# Author List:      Dibyendu Maity,Ankit Dwibedi,Sankalpa Basak,Snehajit Paul
+# Filename:         alu.v
+# File Description: This module implements a parameterized N-bit Arithmetic Logic Unit (ALU). It performs various arithmetic (ADD, SUB), logical (AND, OR, XOR), comparison (SLT, SLTU), and shift (SLL, SRL, SRA) operations.
+# Global variables: None
+*/
 
-
-
-// alu.v - ALU module
-
-module alu #(parameter WIDTH = 32) (
-    input       [WIDTH-1:0] a, b,       // operands
-    input       [3:0] alu_ctrl,         // ALU control
-    output reg  [WIDTH-1:0] alu_out,    // ALU output
-    output      zero                    // zero flag
+module alu #(parameter WIDTH = 32 /* WIDTH: Sets the bit-width of the ALU operands and output*/) (
+    input       [WIDTH-1:0] a, b,       
+    input       [3:0] alu_ctrl,         
+    output reg  [WIDTH-1:0] alu_out,    
+    output      zero                    
 );
+
+// a: First input operand for the ALU operation
+// b: Second input operand for the ALU operation
+// alu_ctrl: 4-bit control signal selecting the ALU operation
+// alu_out: The result of the ALU operation
+// zero: Output flag, set to 1 if alu_out is zero, 0 otherwise
 
 // ALU control encoding:
     // 0000: ADD
@@ -23,6 +33,12 @@ module alu #(parameter WIDTH = 32) (
     // 1001: SRA (shift right arithmetic)
 
 always @(a, b, alu_ctrl) begin
+    /*
+    Purpose:
+    ---
+    Combinational logic that performs an arithmetic or logical operation 
+    based on the alu_ctrl input and assigns the result to alu_out.
+    */
     case (alu_ctrl)
         4'b0000:  alu_out = a + b;                                           // ADD
         4'b0001:  alu_out = a + ~b + 1;                                      // SUB
