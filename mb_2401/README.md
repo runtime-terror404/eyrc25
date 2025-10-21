@@ -43,7 +43,7 @@ The most critical component of our design is the single-cycle RISC-V processor.
 * **Features:** Implements all base integer instructions (R, I, S, B, U, J types), including loads, stores, branches, and jumps.
 * **Project:** Contained entirely within the `mazesolver_cpu/` directory.
 
-> **For full design and implementation details, please see the [CPU's README file](./mazesolver_cpu/README.md).**
+> **For full design and implementation details, please see the [CPU's README file](./mb_2401/task_1/Task_1C/README.md).**
 
 ## Development Workflow
 
