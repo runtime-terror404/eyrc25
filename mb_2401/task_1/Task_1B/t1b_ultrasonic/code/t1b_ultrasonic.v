@@ -1,4 +1,13 @@
 /*
+# Team ID:          2401
+# Theme:            MazeSolver Bot (MB)
+# Author List:      Dibyendu Maity,Ankit Dwibedi,Sankalpa Basak,Snehajit Paul
+# Filename:         t1b_ultrasonic.v
+# File Description: This module implements a controller for an HC-SR04 ultrasonic distance sensor. It uses a Finite State Machine (FSM) to generate the trigger pulse and measure the duration of the echo pulse to calculate the distance of an object in millimeters.
+# Global variables: None
+*/
+
+/*
 Module HC_SR04 Ultrasonic Sensor
 
 This module will detect objects present in front of the range, and give the distance in mm.
@@ -20,6 +29,13 @@ module t1b_ultrasonic(
     output wire [15:0] distance_out
 );
 
+// clk_50M: Input, the 50MHz system clock
+// reset: Input, active-low asynchronous reset
+// echo_rx: Input, the echo pulse received from the ultrasonic sensor
+// trig: Output, the trigger pulse sent to the sensor to start a measurement
+// op: Output, a flag that is high when an object is detected within the defined threshold
+// distance_out: Output, the calculated distance to the object in millimeters
+
 initial begin
     trig = 0;
 end
@@ -30,28 +46,28 @@ Add your logic here
 */
 
 // FSM State Definitions
-localparam S_INIT_DELAY   = 2'd0;
-localparam S_TRIG_PULSE   = 2'd1;
-localparam S_MEASURE_ECHO = 2'd2;
-localparam S_CYCLE_DELAY  = 2'd3;
+localparam S_INIT_DELAY   = 2'd0; // State: Initial short delay before triggering
+localparam S_TRIG_PULSE   = 2'd1; // State: Generate the 10us trigger pulse
+localparam S_MEASURE_ECHO = 2'd2; // State: Wait for and measure the echo pulse
+localparam S_CYCLE_DELAY  = 2'd3; // State: Wait for the measurement cycle to complete (60ms)
 
 // Timing Parameters (for 50MHz clock with 20ns period)
 localparam COUNT_1US   = 6'd50;        // 1us / 20ns = 50 clock cycles
 localparam COUNT_10US  = 10'd500;      // 10us / 20ns = 500 clock cycles
 localparam COUNT_12MS_BASE = 24'd600000;   // 12ms / 20ns = 600000 clock cycles
 
-localparam STATE_TRANSITION_OVERHEAD = 3'd4;
-localparam COUNT_12MS = COUNT_12MS_BASE + COUNT_10US + STATE_TRANSITION_OVERHEAD;
+localparam STATE_TRANSITION_OVERHEAD = 3'd4; //4 cycle dealy for 4 state FSM as state transistion uses clock cycles
+localparam COUNT_12MS = COUNT_12MS_BASE + COUNT_10US + STATE_TRANSITION_OVERHEAD; //total clock cycle between each measurement
 
-localparam OBSTACLE_THRESHOLD = 16'd70; // 70mm
+localparam OBSTACLE_THRESHOLD = 16'd70; // 70mm, The distance in mm below which an object is considered detected
 
-// FSM state register
-reg [1:0] state;
-reg [23:0] total_cycle_counter; // Single unified counter
-reg [16:0] echo_counter;        // Reduced to 17 bits (enough for max distance)
-reg [15:0] distance_reg;
-reg echo_prev;
-reg echo_measuring;
+
+reg [1:0] state;                // FSM state register
+reg [23:0] total_cycle_counter; // total_cycle_counter: A general-purpose counter for timing states
+reg [16:0] echo_counter;        // echo_counter: A counter specifically for measuring the duration of the echo pulse
+reg [15:0] distance_reg;        // distance_reg: Register to hold the calculated distance value
+reg echo_prev;                  // echo_prev: Stores the previous state of echo_rx for edge detectio
+reg echo_measuring;             // echo_measuring: A flag to indicate that echo measurement is in progress
 
 // Edge detection
 wire echo_rising_edge = echo_rx && !echo_prev;
@@ -64,6 +80,14 @@ end
 
 // FSM, counter, and output logic
 always @(posedge clk_50M or negedge reset) begin
+    /*
+    Purpose:
+    ---
+    This block implements the main Finite State Machine. It controls the 
+    state transitions, generates the trigger pulse, measures the echo pulse
+    duration, and calculates the distance. It is sensitive to the positive 
+    edge of the clock and the negative edge of the reset signal.
+    */
     if (!reset) begin
         state <= S_INIT_DELAY;
         total_cycle_counter <= 0;
@@ -160,7 +184,7 @@ end
 
 // Assign outputs
 assign distance_out = distance_reg;
-assign op = (distance_reg > 0) && (distance_reg < OBSTACLE_THRESHOLD);
+assign op = (distance_reg > 0) && (distance_reg < OBSTACLE_THRESHOLD); // op: Sets the object present flag to high if the measured distance is within the threshold (and not zero)
 
 
 //////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE //////////////////
