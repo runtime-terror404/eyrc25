@@ -1,5 +1,5 @@
 Analysis & Synthesis report for t2a_dht
-Sun Nov 16 16:23:02 2025
+Sun Nov 16 16:36:01 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -47,7 +47,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 16 16:23:02 2025       ;
+; Analysis & Synthesis Status        ; Successful - Sun Nov 16 16:36:01 2025       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; t2a_dht                                     ;
 ; Top-level Entity Name              ; t2a_dht                                     ;
@@ -335,14 +335,14 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Nov 16 16:22:55 2025
+    Info: Processing started: Sun Nov 16 16:35:55 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off t2a_dht -c t2a_dht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file code/t2a_dht.v
     Info (12023): Found entity 1: t2a_dht File: /home/divine/eyrc25/mb_2401/task_2/Task_2A/t2a_dht/code/t2a_dht.v Line: 32
 Info (12127): Elaborating entity "t2a_dht" for the top level hierarchy
-Info (13000): Registers with preset signals will power-up high File: /home/divine/eyrc25/mb_2401/task_2/Task_2A/t2a_dht/code/t2a_dht.v Line: 85
+Info (13000): Registers with preset signals will power-up high File: /home/divine/eyrc25/mb_2401/task_2/Task_2A/t2a_dht/code/t2a_dht.v Line: 86
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
@@ -354,9 +354,9 @@ Info (21057): Implemented 307 device resources after synthesis - the final resou
     Info (21060): Implemented 1 bidirectional pins
     Info (21061): Implemented 263 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 485 megabytes
-    Info: Processing ended: Sun Nov 16 16:23:02 2025
-    Info: Elapsed time: 00:00:07
+    Info: Peak virtual memory: 481 megabytes
+    Info: Processing ended: Sun Nov 16 16:36:01 2025
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:17
 
 
