@@ -1,0 +1,12 @@
+
+State Machine - |t2a_dht|state
+Name state.S_BIT_HIGH state.S_BIT_LOW state.S_RESP_HIGH state.S_RESP_LOW state.S_RELEASE state.S_REQ_HIGH state.S_REQ_LOW state.S_IDLE state.S_FINISH 
+state.S_IDLE 0 0 0 0 0 0 0 0 0 
+state.S_REQ_LOW 0 0 0 0 0 0 1 1 0 
+state.S_REQ_HIGH 0 0 0 0 0 1 0 1 0 
+state.S_RELEASE 0 0 0 0 1 0 0 1 0 
+state.S_RESP_LOW 0 0 0 1 0 0 0 1 0 
+state.S_RESP_HIGH 0 0 1 0 0 0 0 1 0 
+state.S_BIT_LOW 0 1 0 0 0 0 0 1 0 
+state.S_BIT_HIGH 1 0 0 0 0 0 0 1 0 
+state.S_FINISH 0 0 0 0 0 0 0 1 1 
