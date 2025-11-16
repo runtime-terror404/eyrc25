@@ -51,6 +51,7 @@ module t2a_dht(
     end
 //////////////////DO NOT MAKE ANY CHANGES ABOVE THIS LINE //////////////////
 
+<<<<<<< HEAD
 // Timing Constants (for 50MHz clock with 20ns period)
 localparam [19:0] CYCLES_18MS   = 20'd900000; // 18ms minimum idle time between measurements
 localparam [11:0] CYCLES_40US   = 12'd2000;   // 40us request high pulse duration
@@ -234,6 +235,11 @@ always @(posedge clk_50M or negedge reset) begin
     end
 end
 
+=======
+/*
+Add your logic here_snehajit
+*/
+>>>>>>> 81b4f0cc6146222c8df424fa940643801a35918b
 
 //////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE //////////////////
   
