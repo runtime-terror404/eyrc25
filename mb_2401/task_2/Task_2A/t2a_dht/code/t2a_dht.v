@@ -51,12 +51,13 @@ module t2a_dht(
     end
 //////////////////DO NOT MAKE ANY CHANGES ABOVE THIS LINE //////////////////
 
-// Timing constants
-localparam [19:0] CYCLES_18MS   = 20'd900000; // 18ms minimum idle time between measurements
-localparam [11:0] CYCLES_40US   = 12'd2000; // 40us request high pulse duration
-localparam [12:0] THRESHOLD_0_1 = 13'd2400; //threshold to distinguish logic 0 from 1
 
-// FSM states
+// Timing Constants (for 50MHz clock with 20ns period)
+localparam [19:0] CYCLES_18MS   = 20'd900000; // 18ms minimum idle time between measurements
+localparam [11:0] CYCLES_40US   = 12'd2000;   // 40us request high pulse duration
+localparam [12:0] THRESHOLD_0_1 = 13'd2400;   // 48us threshold to distinguish logic 0 from 1
+
+// FSM State Definitions
 localparam [3:0] S_IDLE      = 4'd0; // State: Hold line LOW (18ms idle between readings)
 localparam [3:0] S_REQ_LOW   = 4'd1; // State: Pull line LOW for 18ms (start signal)
 localparam [3:0] S_REQ_HIGH  = 4'd2; // State: Pull line HIGH for 40us then release
@@ -69,13 +70,15 @@ localparam [3:0] S_FINISH    = 4'd8; // State: Process data and assert data_vali
 
 reg [3:0] state; // FSM state register
 
-// Tristate control
+// Bidirectional sensor line control
 reg sensor_drive; // sensor_drive: 0 = module drives line, 1 = high-Z (sensor drives)
-reg sensor_out; // sensor_out: Output value when module is driving the line
+reg sensor_out;   // sensor_out: Output value when module is driving the line
+
 assign sensor = sensor_drive ? 1'bz : sensor_out;
 
 // Input synchronizer for edge detection and metastability prevention
 reg [2:0] sync; // sync: 3-stage synchronizer for sensor input
+
 always @(posedge clk_50M or negedge reset) begin
     if (!reset)
         sync <= 3'b111;
@@ -83,28 +86,22 @@ always @(posedge clk_50M or negedge reset) begin
         sync <= { sync[1:0], (sensor === 1'bz || sensor === 1'bx) ? 1'b1 : sensor };
 end
 
-wire s_val  = sync[2]; // s_val: Current synchronized sensor value
-wire rise_e = (sync[1:0] == 2'b01); // rise_e: Rising edge detection
-wire fall_e = (sync[1:0] == 2'b10); // fall_e: Falling edge detection
-wire sensor_is_z = (sensor === 1'bz); // sensor_is_z: Flag indicating sensor line is high-Z
+wire s_val       = sync[2];            // s_val: Current synchronized sensor value
+wire rise_e      = (sync[1:0] == 2'b01); // rise_e: Rising edge detection
+wire fall_e      = (sync[1:0] == 2'b10); // fall_e: Falling edge detection
+wire sensor_is_z = (sensor === 1'bz);    // sensor_is_z: Flag indicating sensor line is high-Z
 
-// Internal Register for counter
-reg [19:0] cnt;
-
-// Mapped slices
-wire [5:0]  bit_i        = cnt[19:14]; //bit_i: Bit index counter (0-39) for data reception
-wire [11:0] high_cnt     = cnt[13:2]; // high_cnt: Counter for measuring HIGH pulse width (12 bits for 70us)
-wire [1:0]  finish_delay = cnt[1:0]; // finish_delay: Delay counter in FINISH state for timing alignment
-
-// Data buffer
-reg [39:0] data_buf;
+// Internal Registers
+reg [19:0] cnt;          // cnt: General purpose counter for timing (20 bits for 18ms)
+reg [39:0] data_buf;     // data_buf: Buffer to store 40-bit data frame from DHT11
+reg [5:0] bit_i;         // bit_i: Bit index counter (0-39) for data reception
+reg [11:0] high_cnt;     // high_cnt: Counter for measuring HIGH pulse width (12 bits for 70us)
+reg [1:0] finish_delay;  // finish_delay: Delay counter in FINISH state for timing alignment
 
 // Checksum calculation
 wire [7:0] calc_checksum = data_buf[39:32] + data_buf[31:24] + data_buf[23:16] + data_buf[15:8];
 
-
-// MAIN FSM
-
+// Main FSM
 always @(posedge clk_50M or negedge reset) begin
     /*
     Purpose:
@@ -118,111 +115,93 @@ always @(posedge clk_50M or negedge reset) begin
     if (!reset) begin
         state <= S_IDLE;
         sensor_drive <= 1'b1;
-        sensor_out   <= 1'b1;
+        sensor_out <= 1'b1;
+
         cnt <= 20'd0;
         data_buf <= 40'd0;
-        RH_integral <= 0;
-        RH_decimal  <= 0;
-        T_integral  <= 0;
-        T_decimal   <= 0;
-        Checksum    <= 0;
-        data_valid  <= 0;
+        bit_i <= 6'd0;
+        high_cnt <= 12'd0;
+        finish_delay <= 2'd0;
+
+        RH_integral <= 8'd0;
+        RH_decimal  <= 8'd0;
+        T_integral  <= 8'd0;
+        T_decimal   <= 8'd0;
+        Checksum    <= 8'd0;
+        data_valid  <= 1'b0;
     end else begin
-        data_valid <= 0;
+        data_valid <= 1'b0;
 
         case(state)
 
-        // =============================================================
-        // START: drive low
-        // =============================================================
         S_IDLE: begin
-            cnt <= 0;
-            sensor_drive <= 0;
-            sensor_out   <= 0;
+            cnt <= 20'd0;
+            sensor_drive <= 1'b0;
+            sensor_out   <= 1'b0;
             state <= S_REQ_LOW;
         end
 
-        // =============================================================
-        // Hold LOW for 18ms
-        // =============================================================
         S_REQ_LOW: begin
             cnt <= cnt + 20'd1;
-            if (cnt >= CYCLES_18MS-1) begin
-                cnt <= 0;
-                sensor_out <= 1;
+            if (cnt >= CYCLES_18MS - 20'd1) begin
+                cnt <= 20'd0;
+                sensor_out <= 1'b1;
                 state <= S_REQ_HIGH;
             end
         end
 
-        // =============================================================
-        // Hold HIGH for 40us
-        // =============================================================
         S_REQ_HIGH: begin
             cnt <= cnt + 20'd1;
-            if (cnt >= CYCLES_40US-1) begin
-                cnt <= 0;
-                sensor_drive <= 1;
+            if (cnt >= CYCLES_40US - 20'd1) begin
+                cnt <= 20'd0;
+                sensor_drive <= 1'b1;
                 state <= S_RELEASE;
             end
         end
 
-        // =============================================================
-        // Wait for falling edge
-        // =============================================================
         S_RELEASE: begin
             if (fall_e) begin
                 state <= S_RESP_LOW;
             end
         end
 
-        // =============================================================
-        // Wait for rising
-        // =============================================================
         S_RESP_LOW: begin
             if (rise_e) begin
                 state <= S_RESP_HIGH;
             end
         end
 
-        // =============================================================
-        // Wait for falling (start bits)
-        // =============================================================
         S_RESP_HIGH: begin
             if (fall_e) begin
-                cnt <= 0;
-                data_buf <= 0;
+                bit_i <= 6'd0;
+                data_buf <= 40'd0;
                 state <= S_BIT_LOW;
             end
         end
 
-        // =============================================================
-        // LOW part of bit
-        // =============================================================
         S_BIT_LOW: begin
             if (rise_e) begin
-                cnt[13:2] <= 12'd1;  // high_cnt = 1
+                high_cnt <= 12'd1;
                 state <= S_BIT_HIGH;
             end
         end
 
-        // =============================================================
-        // HIGH part — measure width
-        // =============================================================
         S_BIT_HIGH: begin
             if (s_val && !sensor_is_z)
-                cnt[13:2] <= high_cnt + 12'd1;
+                high_cnt <= high_cnt + 12'd1;
 
-            if (fall_e || (sensor_is_z && sync[1])) begin
+            if (fall_e || (sensor_is_z && sync[1]==1'b1)) begin
+
                 if (high_cnt > THRESHOLD_0_1)
-                    data_buf[39-bit_i] <= 1;
+                    data_buf[39-bit_i] <= 1'b1;
                 else
-                    data_buf[39-bit_i] <= 0;
+                    data_buf[39-bit_i] <= 1'b0;
 
-                cnt[19:14] <= bit_i + 6'd1; // increment bit_i
-                cnt[13:2]  <= 0;            // high_cnt reset
+                bit_i <= bit_i + 6'd1;
+                high_cnt <= 12'd0;
 
-                if (bit_i == 39) begin
-                    cnt[1:0] <= 0;          // finish_delay reset
+                if (bit_i == 6'd39) begin
+                    finish_delay <= 2'd0;
                     state <= S_FINISH;
                 end else begin
                     state <= S_BIT_LOW;
@@ -230,13 +209,10 @@ always @(posedge clk_50M or negedge reset) begin
             end
         end
 
-        // =============================================================
-        // Finish + checksum check
-        // =============================================================
         S_FINISH: begin
-            cnt[1:0] <= finish_delay + 2'd1;
-
-            if (finish_delay == 2) begin
+            finish_delay <= finish_delay + 2'd1;
+            
+            if (finish_delay == 2'd2) begin
                 if (calc_checksum == data_buf[7:0]) begin
                     RH_integral <= data_buf[39:32];
                     RH_decimal  <= data_buf[31:24];
@@ -248,6 +224,7 @@ always @(posedge clk_50M or negedge reset) begin
 
                 sensor_drive <= 0;
                 sensor_out   <= 0;
+
                 state <= S_IDLE;
             end
         end
