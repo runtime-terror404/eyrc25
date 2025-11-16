@@ -1,5 +1,5 @@
 Analysis & Synthesis report for t2a_dht
-Sun Nov 16 16:36:01 2025
+Sun Nov 16 17:54:12 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -47,15 +47,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 16 16:36:01 2025       ;
+; Analysis & Synthesis Status        ; Successful - Sun Nov 16 17:54:12 2025       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; t2a_dht                                     ;
 ; Top-level Entity Name              ; t2a_dht                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 262                                         ;
-;     Total combinational functions  ; 220                                         ;
-;     Dedicated logic registers      ; 136                                         ;
-; Total registers                    ; 136                                         ;
+; Total logic elements               ; 281                                         ;
+;     Total combinational functions  ; 239                                         ;
+;     Dedicated logic registers      ; 115                                         ;
+; Total registers                    ; 115                                         ;
 ; Total pins                         ; 44                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -181,20 +181,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 262           ;
+; Estimated Total logic elements              ; 281           ;
 ;                                             ;               ;
-; Total combinational functions               ; 220           ;
+; Total combinational functions               ; 239           ;
 ; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 124           ;
-;     -- 3 input functions                    ; 45            ;
-;     -- <=2 input functions                  ; 51            ;
+;     -- 4 input functions                    ; 136           ;
+;     -- 3 input functions                    ; 54            ;
+;     -- <=2 input functions                  ; 49            ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 164           ;
+;     -- normal mode                          ; 183           ;
 ;     -- arithmetic mode                      ; 56            ;
 ;                                             ;               ;
-; Total registers                             ; 136           ;
-;     -- Dedicated logic registers            ; 136           ;
+; Total registers                             ; 115           ;
+;     -- Dedicated logic registers            ; 115           ;
 ;     -- I/O registers                        ; 0             ;
 ;                                             ;               ;
 ; I/O pins                                    ; 44            ;
@@ -202,9 +202,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0             ;
 ;                                             ;               ;
 ; Maximum fan-out node                        ; clk_50M~input ;
-; Maximum fan-out                             ; 136           ;
-; Total fan-out                               ; 1355          ;
-; Average fan-out                             ; 3.04          ;
+; Maximum fan-out                             ; 115           ;
+; Total fan-out                               ; 1330          ;
+; Average fan-out                             ; 3.00          ;
 +---------------------------------------------+---------------+
 
 
@@ -213,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |t2a_dht                   ; 220 (220)           ; 136 (136)                 ; 0           ; 0            ; 0       ; 0         ; 44   ; 0            ; |t2a_dht            ; t2a_dht     ; work         ;
+; |t2a_dht                   ; 239 (239)           ; 115 (115)                 ; 0           ; 0            ; 0       ; 0         ; 44   ; 0            ; |t2a_dht            ; t2a_dht     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -253,12 +253,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 136   ;
-; Number of registers using Synchronous Clear  ; 29    ;
+; Total registers                              ; 115   ;
+; Number of registers using Synchronous Clear  ; 13    ;
 ; Number of registers using Synchronous Load   ; 12    ;
-; Number of registers using Asynchronous Clear ; 136   ;
+; Number of registers using Asynchronous Clear ; 115   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 80    ;
+; Number of registers using Clock Enable       ; 60    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -282,10 +282,9 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |t2a_dht|finish_delay[2]   ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |t2a_dht|bit_i[5]          ;
-; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |t2a_dht|high_cnt[11]      ;
-; 6:1                ; 20 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |t2a_dht|cnt[16]           ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; Yes        ; |t2a_dht|cnt[19]           ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |t2a_dht|cnt[1]            ;
+; 12:1               ; 12 bits   ; 96 LEs        ; 36 LEs               ; 60 LEs                 ; Yes        ; |t2a_dht|cnt[13]           ;
 ; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |t2a_dht|Selector25        ;
 ; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |t2a_dht|Selector29        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
@@ -297,26 +296,24 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 44                          ;
-; cycloneiii_ff         ; 136                         ;
-;     CLR               ; 55                          ;
+; cycloneiii_ff         ; 115                         ;
+;     CLR               ; 54                          ;
 ;     CLR SCLR          ; 1                           ;
-;     ENA CLR           ; 40                          ;
-;     ENA CLR SCLR      ; 28                          ;
-;     ENA CLR SLD       ; 12                          ;
+;     ENA CLR           ; 48                          ;
+;     ENA CLR SCLR SLD  ; 12                          ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 220                         ;
+; cycloneiii_lcell_comb ; 239                         ;
 ;     arith             ; 56                          ;
 ;         2 data inputs ; 34                          ;
 ;         3 data inputs ; 22                          ;
-;     normal            ; 164                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 5                           ;
+;     normal            ; 183                         ;
+;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 11                          ;
-;         3 data inputs ; 23                          ;
-;         4 data inputs ; 124                         ;
+;         3 data inputs ; 32                          ;
+;         4 data inputs ; 136                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.56                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -335,28 +332,28 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Nov 16 16:35:55 2025
+    Info: Processing started: Sun Nov 16 17:54:05 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off t2a_dht -c t2a_dht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file code/t2a_dht.v
     Info (12023): Found entity 1: t2a_dht File: /home/divine/eyrc25/mb_2401/task_2/Task_2A/t2a_dht/code/t2a_dht.v Line: 32
 Info (12127): Elaborating entity "t2a_dht" for the top level hierarchy
-Info (13000): Registers with preset signals will power-up high File: /home/divine/eyrc25/mb_2401/task_2/Task_2A/t2a_dht/code/t2a_dht.v Line: 86
+Info (13000): Registers with preset signals will power-up high File: /home/divine/eyrc25/mb_2401/task_2/Task_2A/t2a_dht/code/t2a_dht.v Line: 83
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 307 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 326 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 41 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 263 logic cells
+    Info (21061): Implemented 282 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 481 megabytes
-    Info: Processing ended: Sun Nov 16 16:36:01 2025
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 484 megabytes
+    Info: Processing ended: Sun Nov 16 17:54:12 2025
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:17
 
 
