@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at t2c_maze_explorer.v(31): object "left" differs only in case from object "LEFT" in the same scope File: /home/divine/eyrc25/mb_2401/task_2/Task_2C/t2c_maze_explorer/code/t2c_maze_explorer.v Line: 31
+Info (10281): Verilog HDL Declaration information at t2c_maze_explorer.v(31): object "right" differs only in case from object "RIGHT" in the same scope File: /home/divine/eyrc25/mb_2401/task_2/Task_2C/t2c_maze_explorer/code/t2c_maze_explorer.v Line: 31

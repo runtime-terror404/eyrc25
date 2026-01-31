@@ -1,0 +1,14 @@
+
+State Machine - |t2c_maze_explorer|last_choice
+Name last_choice.00 last_choice.10 last_choice.01 last_choice.11 
+last_choice.11 0 0 0 0 
+last_choice.01 0 0 1 1 
+last_choice.10 0 1 0 1 
+last_choice.00 1 0 0 1 
+
+State Machine - |t2c_maze_explorer|state
+Name state.EXECUTE state.DECIDE state.WAIT state.IDLE 
+state.IDLE 0 0 0 0 
+state.WAIT 0 0 1 1 
+state.DECIDE 0 1 0 1 
+state.EXECUTE 1 0 0 1 

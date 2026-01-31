@@ -1,0 +1,21 @@
+|t2c_maze_explorer
+clk => move[0]~reg0.CLK
+clk => move[1]~reg0.CLK
+clk => move[2]~reg0.CLK
+rst_n => move[0]~reg0.ACLR
+rst_n => move[1]~reg0.ACLR
+rst_n => move[2]~reg0.ACLR
+left => move.OUTPUTSELECT
+left => move.OUTPUTSELECT
+left => move.OUTPUTSELECT
+mid => move.OUTPUTSELECT
+mid => move.OUTPUTSELECT
+mid => move.OUTPUTSELECT
+right => move.DATAA
+right => move.DATAA
+right => move.DATAA
+move[0] <= move[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+move[1] <= move[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+move[2] <= move[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
