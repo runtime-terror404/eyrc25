@@ -1,5 +1,0 @@
-
-State Machine - |uart_tx|state
-Name state.ST_SEND 
-state.ST_IDLE 0 
-state.ST_SEND 1 

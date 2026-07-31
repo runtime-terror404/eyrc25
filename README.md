@@ -1,53 +1,95 @@
-# Team #2401 - e-Yantra 2025 Journey
+# MazeSolver Bot — e-Yantra Robotics Competition 2025
 
-Welcome to the official repository for **Team #2401** from Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal. This repository documents our entire journey, from design to implementation, for the e-Yantra Robotics Competition 2025. Here you will find all the resources and code files developed by our team.
+**Team #2401** | Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal
 
+An FPGA-powered autonomous maze-solving robot built for the **e-Yantra Robotics Competition 2025** organized by IIT Bombay. The bot navigates a warehouse-like grid, collects environmental sensor data (temperature, humidity, distance), and communicates over UART — all driven by a custom-designed **single-cycle RISC-V RV32I CPU** implemented in Verilog HDL.
 
+---
 
-## About e-Yantra
+## Project Overview
 
-e-Yantra is a prestigious robotics competition hosted by the Indian Institute of Technology Bombay (IIT Bombay). It's a project-based learning initiative that aims to nurture engineering talent by providing hands-on experience in solving real-world problems. We are thrilled to be a part of this competition, pushing our skills in embedded systems, digital logic design, and robotics.
+The MazeSolver Bot (MB) theme challenges teams to build an autonomous FPGA robot from the ground up. Our implementation covers:
 
-You can learn more at the [e-Yantra Official Website](https://portal.e-yantra.org/).
+- **Custom RISC-V CPU** — 17-module single-cycle processor implementing the full RV32I instruction set
+- **Sensor Integration** — DHT11 temperature/humidity, HC-SR04 ultrasonic distance, wall proximity sensors
+- **Communication** — UART transmitter and receiver with configurable parity (115200 baud)
+- **Autonomous Navigation** — DFS-based maze exploration with stack backtracking and dead-end detection
+- **Peripheral Control** — PWM generation with frequency scaling for motor/servo control
 
-## Our Themes & Projects
+---
 
-Our team is currently engaged with the following themes for the competition.
+## Repository Structure
 
-### 🤖 Theme: MazeSolver Bot (MB)
+```
+eyrc25/
+├── LICENSE                    # MIT License (code) + e-Yantra attribution
+├── README.md
+└── mb_2401/
+    ├── t0a_and_gate/                  # Basic AND gate
+    ├── t0b_ripple_carry_adder/        # 2-bit ripple carry adder
+    ├── t0c_sequence_detector/         # "1094" sequence detector FSM
+    ├── t0d_riscv_compiler_test/       # RISC-V GCC toolchain verification
+    ├── t1a_frequency_scaling_pwm/     # Clock divider + PWM generator
+    ├── t1b_ultrasonic_controller/     # HC-SR04 ultrasonic sensor controller
+    ├── t1c_riscv_cpu/                 # Single-cycle RISC-V RV32I CPU
+    ├── t2a_dht_controller/            # DHT11 temperature & humidity sensor
+    ├── t2b_uart_rx/                   # UART receiver (115200 baud)
+    ├── t2b_uart_tx/                   # UART transmitter (115200 baud)
+    └── t2c_maze_explorer/             # Autonomous maze navigation (DFS)
+```
 
-* **Status:** ✅ Main Theme - Actively in Development
-* **Description:** This theme challenges us to build an autonomous FPGA-powered robot from the ground up. The bot must navigate a dynamic, warehouse-like maze while collecting environmental data (temperature, humidity, etc.). The core of this project is our own custom-designed RISC-V CPU, which acts as the bot's brain.
+Each project directory is self-contained with RTL source, testbench, Makefile, and its own README.
 
-> **[➡️ Click here to explore the full MazeSolver Bot project, including our custom CPU design.](https://github.com/runtime-terror404/eyrc25/tree/main/mb_2401)**
-
-### 🌱 Theme: KrishiBalancer
-
-* **Status:** 📝 Exploratory Phase / On Hold
-* **Description:** Our initial exploration into a theme involving a self-balancing robot for agricultural applications. This folder contains our preliminary research and early-stage code for the balancing and control systems. While our primary focus is on the MazeSolver Bot, this project represents our broader interests in agricultural technology.
-
-> **[➡️ Click here to see our initial work on the KrishiBalancer project.](https://github.com/runtime-terror404/eyrc25/tree/main/kb_2401)**
-
-## Repository Navigation
-
-This repository is organized by theme. Each theme's folder is a self-contained project, containing the Verilog source code, Intel Quartus projects, simulation files, and detailed documentation.
+---
 
 ## Technology Stack
 
-Our projects are built using a combination of hardware description languages, professional design tools, and a modern processor architecture.
+| | |
+|---|---|
+| **HDL** | Verilog (IEEE 1364-2001) |
+| **Design & Synthesis** | Intel Quartus Prime 20.1 Lite Edition |
+| **Simulation** | ModelSim (Quartus), Iverilog + GTKWave |
+| **Processor** | Custom RISC-V RV32I (single-cycle, Harvard) |
+| **Target FPGA** | Cyclone IV EP4CE22F17C6 |
+| **Toolchain** | RISC-V GNU GCC (riscv64-unknown-elf) |
 
-* **Hardware Language:** Verilog HDL
-* **Design & Simulation:** Intel Quartus Prime, ModelSim
-* **Processor Architecture:** RISC-V (RV32I)
-* **Target Hardware:** FPGA
+---
 
-## Meet the Team
+## Quick Start
 
-We are a group of passionate engineering students from MAKAUT, WB.
+Every project directory supports:
 
-* Dibyendu Maity
-* Ankit Dwibedi
-* Sankalpa Basak
-* Snehajit Paul
+```bash
+make          # Compile and run simulation with Iverilog
+make wave     # View waveforms in GTKWave
+make clean    # Remove generated files
+```
 
-Thank you for visiting our repository. We look forward to sharing our progress throughout the competition!
+For Quartus, open the `.qpf` file in Intel Quartus Prime 20.1 Lite Edition.
+
+> **Note:** Some testbenches use SystemVerilog features not supported by Iverilog. Use ModelSim (via Quartus) for authoritative simulation results. See individual project READMEs for details.
+
+---
+
+## About e-Yantra
+
+[e-Yantra](https://portal.e-yantra.org/) is a robotics competition hosted by the **Indian Institute of Technology Bombay (IIT Bombay)**. It is a project-based learning initiative that nurtures engineering talent through hands-on experience in solving real-world problems with embedded systems, digital logic design, and robotics.
+
+---
+
+## Team
+
+- **Dibyendu Maity** — [not.dibyendu@gmail.com](mailto:not.dibyendu@gmail.com)
+- **Ankit Dwibedi**
+- **Sankalpa Basak**
+- **Snehajit Paul**
+
+MAKAUT, West Bengal
+
+---
+
+## License
+
+The original Verilog RTL source code, scripts, and documentation in this repository are licensed under the **MIT License**. See [LICENSE](LICENSE) for the full text.
+
+The e-Yantra competition theme ("MazeSolver Bot"), problem statements, specifications, evaluation criteria, and organizer-provided testbench files (contained within `tb/` directories) are the intellectual property of **e-Yantra, IIT Bombay** and are included for reference and educational purposes only.

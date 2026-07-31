@@ -1,7 +1,0 @@
-
-State Machine - |t1b_ultrasonic|state
-Name state.S_CYCLE_DELAY state.S_MEASURE_ECHO state.S_TRIG_PULSE state.S_INIT_DELAY 
-state.S_INIT_DELAY 0 0 0 0 
-state.S_TRIG_PULSE 0 0 1 1 
-state.S_MEASURE_ECHO 0 1 0 1 
-state.S_CYCLE_DELAY 1 0 0 1 

@@ -1,0 +1,36 @@
+# Quartus Prime build artifacts
+db/
+incremental_db/
+output_files/
+simulation/
+
+# Quartus workspace (user-specific window state)
+*.qws
+
+# Generated simulation reports
+*_nativelink_simulation.rpt
+
+# Backup files
+*.bak
+*.bak[0-9]
+*.bak[0-9][0-9]
+
+# ModelSim generated files
+*.wlf
+*.sft
+*.xrf
+modelsim.ini
+msim_transcript
+vsim.wlf
+rtl_work/
+
+# Iverilog / simulation artifacts
+*.out
+dump.vcd
+
+# Submission zips
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
