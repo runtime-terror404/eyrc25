@@ -34,3 +34,5 @@ dump.vcd
 # OS files
 .DS_Store
 Thumbs.db
+
+session.txt
